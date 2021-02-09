@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Add your favorite restaurants to the list";
+}
+
+
+@model Assignment4Foodie.Models.RestaurantResponse
+<!-- form for movies, asp-for and asp action used instead -->
+<div>
+    <h2 class="text-white "> We'd love for you to add your favorite restaurants to the list!</h2>
+    <!--form for adding restaurants to the list -->
+    <form asp-action="AddRestaurant" method="post">
+        <div>
+            <label asp-for="Name">Name:</label>
+            <input asp-for=" Name" />
+        </div>
+        <div>
+            <label asp-for="RestaurantName"> Restaurant Name: </label>
+            <input asp-for="RestaurantName" />
+        </div>
+        <div>
+            <label asp-for="FavoriteDish">  FavoriteDish:</label>
+            <input asp-for="FavoriteDish" />
+        </div>
+        <div>
+            <label asp-for="RestaurantPhone">Restaurant Phone #:</label>
+            <input asp-for="RestaurantPhone" />
+
+        </div>
+
+        <button type="submit"> Add your favorite restaurants to the list</button>
+        <br />
+        <br />
+        <br />
+
+        <!--brings in validation error -->
+
+
+        <div asp-validation-summary="All"></div>
+
+    </form>
+</div>
+

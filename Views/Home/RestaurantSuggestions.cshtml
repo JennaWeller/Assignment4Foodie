@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "User suggestions ";
+}
+
+
+
+@model IEnumerable<Assignment4Foodie.Models.RestaurantResponse>
+<!--table for the form values, listing out the movie collection-->
+<div class="right_result">
+    <h2 class=" text-white text-center"> Here are the top restaurants other users recommend</h2>
+    <table id="order_table" class="display">
+        <thead>
+            <tr><th><strong> Name</strong> </th><th><strong> Restaurant Name </strong></th><th><strong> Favorite Dish</strong> </th><th><strong> Restaurant Phone #</strong> </th></tr>
+        <tbody>
+            @foreach (Assignment4Foodie.Models.RestaurantResponse x in Model)
+            {
+                <tr>
+                    <!--grabbing the values from the form and outputting them in rows/columns -->
+                    <td> @x.Name</td>
+                    <td> @x.RestaurantName</td>
+                    <td> @x.FavoriteDish</td>
+                    <td> @x.RestaurantPhone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
