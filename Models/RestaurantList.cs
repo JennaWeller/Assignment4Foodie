@@ -22,7 +22,8 @@ namespace Assignment4Foodie.Controllers
         [Required]
         public string Address { get; set; }
         //phone number validation
-        [RegularExpression("^(?!0+$)(\\+\\d{1,3}[- ]?)?(?!0+$)\\d{10,15}$", ErrorMessage = "Please enter valid phone no.")]
+        [DataType(DataType.PhoneNumber)]
+        [RegularExpression(@"^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$", ErrorMessage = "The PhoneNumber field is not a valid phone number")]
 #nullable enable
         public string? RestaurantPhone { get; set; }
 #nullable disable
@@ -33,6 +34,7 @@ namespace Assignment4Foodie.Controllers
         //creating array of top 5 restaurants 
         public static RestaurantList[] GetRestaurants()
         {
+
             RestaurantList r1 = new RestaurantList(1)
             {
 
@@ -51,6 +53,7 @@ namespace Assignment4Foodie.Controllers
                 Address = "484 Bulldog Ln ||",
                 RestaurantPhone = "(801) 374-2697 ||",
                 LinkToWebsite = "https://www.chick-fil-a.com/locations/ut/cougar-state"
+
 
             };
             RestaurantList r3 = new RestaurantList(3)
@@ -78,7 +81,7 @@ namespace Assignment4Foodie.Controllers
                 RestaurantName = "Costa Vida ||",
                 FavoriteDish = null,
                 Address = "1200 N University Ave, Provo, UT 84606 ||",
-                RestaurantPhone = "(801) 373 - 1876 ||",
+                RestaurantPhone = "(801) 373-1876 ||",
                 LinkToWebsite = "https://order.costavida.com/menu/costa-vida-provo"
             };
             return new RestaurantList[] { r1, r2, r3, r4, r5 };
