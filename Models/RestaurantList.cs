@@ -42,7 +42,7 @@ namespace Assignment4Foodie.Controllers
                 FavoriteDish = "Verde Chicken Enchiladas  ||",
                 Address = "3815 167 W 800 N, Orem, UT 84057 ||",
                 RestaurantPhone = "(801) 426-9328  ||",
-
+                //left off website to test of the coming soon default value
 
             };
             RestaurantList r2 = new RestaurantList(2)
@@ -77,7 +77,7 @@ namespace Assignment4Foodie.Controllers
             };
             RestaurantList r5 = new RestaurantList(5)
             {
-
+                //left a null to test the it's all tasty
                 RestaurantName = "Costa Vida ||",
                 FavoriteDish = null,
                 Address = "1200 N University Ave, Provo, UT 84606 ||",

@@ -24,13 +24,14 @@ namespace Assignment4Foodie.Controllers
 
             foreach (RestaurantList r in RestaurantList.GetRestaurants())
             {
-                //if the favorite dish is empty, then you list "It's all tasty"
+                //if the favorite dish is empty, then you list "It's all tasty" and handling the nulls with ?
 #nullable enable
                 string? FavoriteDish = r.FavoriteDish ?? "It's all tasty! ||";
                 string? RestaurantPhone = r.RestaurantPhone;
                 string? LinkToWebsite = r.LinkToWebsite;
 
 #nullable disable
+                //pass in favoritedish instead of r. because we are giving it a value of it's all tasty if it ends up null 
                 restaurantList.Add(string.Format("#{0}: {1} {2} {3} {4} {5} ", r.Rank, r.RestaurantName, FavoriteDish, r.Address, RestaurantPhone, LinkToWebsite));
 
             }
